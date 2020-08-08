@@ -1,0 +1,270 @@
+$font-family: "Quicksand", sans-serif;
+$color: #212529;
+$main-color: #9352b3;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//Navigation Bar
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: $font-family;
+  padding: 10px 15px;
+  .image {
+    height: 38.05px;
+    width: 150px;
+    padding: 0px 5px;
+    margin-top: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("https://klbtheme.com/movify/wp-content/uploads/2018/04/logo.png");
+  }
+  .navigation-options {
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 1030px) {
+      display: none;
+    }
+    a {
+      padding: 8px 15px;
+      font-size: 16px;
+      text-decoration: none;
+      color: $color;
+    }
+    .option {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .inner-box {
+        position: absolute;
+        display: none;
+        transform: translate(-50px, 30px);
+        box-shadow: 1px 0 20px 0 rgba(0, 0, 0, 0.12);
+        text-align: center;
+        div {
+          background-color: white;
+          padding: 10px 20px;
+          width: 150px;
+        }
+      }
+      .movie-innerbox {
+        transform: translate(-10px, 30px);
+      }
+      &:hover {
+        .page-innerbox,
+        .home-innerbox,
+        .movie-innerbox,
+        .blogs-innerbox {
+          display: flex;
+          flex-direction: column;
+          div:hover {
+            color: $main-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .login {
+    padding: 0px 20px;
+    @media (max-width: 1030px) {
+      display: none;
+    }
+    .button {
+      background-color: $main-color;
+      font-size: 14px;
+      font-weight: 400;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-top: 6px;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+//Banner
+.banner {
+  width: 100%;
+  height: 179px;
+  font-family: $font-family;
+  color: white;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(#a11f3c, 0.9) 0%,
+      rgba(#9352b3, 0.9) 100%
+    ),
+    url("https://klbtheme.com/movify/wp-content/uploads/2018/04/movie-collection.jpg");
+  .inner-box {
+    padding: 50px;
+    .banner-text {
+      font-weight: 400;
+      font-size: 38px;
+    }
+  }
+}
+
+//Movies Component
+.movies-component {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  padding: 100px 0px;
+  justify-content: space-between;
+  font-family: $font-family;
+  color: $color;
+  
+  .each-movie {
+    width: 330px;
+    height: 770px;
+    margin-bottom: 50px;
+    box-shadow: 1px 0 20px 0 rgba(0, 0, 0, 0.12);
+    @media (max-width: 870px) {
+      margin: auto;
+      margin-bottom: 50px;
+    }
+    cursor: pointer;
+    .image {
+      width: 100%;
+      height: 400px;
+      //background-image: url("https://klbtheme.com/movify/wp-content/uploads/2018/04/MV5BNDE4OTk4MTk0M15BMl5BanBnXkFtZTgwODQ4MTg0MzI@._V1_SX300-300x444.jpg");
+      background-size: cover;
+    }
+    .inner-box {
+      padding: 30px;
+      .movie-name {
+        font-weight: 500;
+      }
+      .movie-ratings {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #999999;
+        padding: 10px 0px;
+        font-size: 14px;
+        .rating,
+        .genre {
+          font-weight: 300;
+        }
+      }
+      .movie-bio {
+        color: #999999;
+        font-weight: 300;
+        max-height: 100px;
+        overflow: auto;
+      }
+      .button {
+        width: 60px;
+        background-color: $main-color;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        &:hover {
+          filter: brightness(1.1);
+        }
+      }
+    }
+    &:hover {
+      animation-name: move;
+      animation-duration: 1s;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+  }
+  @keyframes move {
+    from {
+      transform: translateY(0rem);
+    }
+    to {
+      transform: translateY(-0.8rem);
+    }
+  }
+}
+
+//Footer
+.footer {
+  width: 100%;
+  background-color: #3e4555;
+  .inner-box {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+    color: white;
+    font-family: $font-family;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: space-between;
+    .row1,
+    .row2,
+    .row3,
+    .row4 {
+      width: 20%;
+      @media (max-width: 600px) {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 50px;
+      }
+      .head {
+        font-size: 25px;
+      }
+      .desc {
+        font-weight: 300;
+        font-size: 16px;
+        padding: 20px 0px;
+      }
+      a {
+        text-decoration: none;
+        color: $main-color;
+        cursor: pointer;
+      }
+      .ref1 {
+        margin-top: 20px;
+      }
+      .ref {
+        padding: 5px 0px;
+        cursor: pointer;
+        &:hover {
+          animation-name: colorChange;
+          animation-duration: 1s;
+        }
+      }
+      @keyframes colorChange {
+        from {
+          color: white;
+        }
+        to {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+.search-input{
+  width:80%;
+  height: 30px;
+  margin-left: 10%;
+  padding: 5px 10px;
+  border: solid 1px grey;
+  margin-top: 50px;
+  font-size: 18px;
+  &:focus{
+    outline: none;
+  }
+}
+
