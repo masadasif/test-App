@@ -11,6 +11,7 @@ export default class HomePage extends Component {
     };
   }
 
+  //Getting data from API
   componentDidMount() {
     const apiKey = "1e448e0dfcdbb565f5d329820065b4d2";
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=" + apiKey).then(
@@ -53,6 +54,7 @@ export default class HomePage extends Component {
           onChange={this.handleChange.bind(this)}
         />
         <div className="movies-component">
+        {/*Filter for Search*/}
           {this.state.movies
             ? this.state.movies
                 .filter(
@@ -92,16 +94,6 @@ export default class HomePage extends Component {
             : null}
         </div>
 
-        {this.state.movieKeyword
-          ? this.state.movieKeyword.map((itemK, i) => (
-              <div>
-                <p>
-                  {" "}
-                  {i}---- {itemK.name}{" "}
-                </p>
-              </div>
-            ))
-          : null}
       </div>
     );
   }
